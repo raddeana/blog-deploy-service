@@ -3,7 +3,7 @@
  * @author Philip
  */
 
-module.exports = [
+export default [
     '/admin',
     '/api/record',
     '/api/records',

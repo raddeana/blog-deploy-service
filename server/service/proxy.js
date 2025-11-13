@@ -4,13 +4,13 @@
  */
  
 // 行为错误信息
-const errorMessages = require('../constant/deploy-errors')
+import errorMessages from '../constant/deploy-errors.js';
 
 // 部署服务
-const npm = require('./npm')
-const git = require('./git')
-const catalog = require('./catalog')
-const project = require('./project')
+import npm from'./npm.js';
+import git from './git.js';
+import catalog from './catalog.js';
+import project from './project.js';
 
 class Proxy {
     /**
@@ -33,30 +33,30 @@ class Proxy {
         console.info(`processing ${action}`)
 
         switch (action) {
-        case 'npm.build':
-            success = await npm.build(args)
-            break
-        case 'catalog.to':
-            success = await catalog.to(args)
-            break
-        case 'catalog.back':
-            success = await catalog.back(args)
-            break
-        case 'project.start':
-            success = await project.start(args)
-            break
-        case 'project.restart':
-            success = await project.restart(args)
-            break
-        case 'project.replaceVersion':
-            success = await project.replaceVersion(args)
-            break
-        case 'git.push':
-            success = await git.push(args)
-            break
-        case 'git.pull':
-            success = await git.pull(args)
-            break
+            case 'npm.build':
+                success = await npm.build(args)
+                break
+            case 'catalog.to':
+                success = await catalog.to(args)
+                break
+            case 'catalog.back':
+                success = await catalog.back(args)
+                break
+            case 'project.start':
+                success = await project.start(args)
+                break
+            case 'project.restart':
+                success = await project.restart(args)
+                break
+            case 'project.replaceVersion':
+                success = await project.replaceVersion(args)
+                break
+            case 'git.push':
+                success = await git.push(args)
+                break
+            case 'git.pull':
+                success = await git.pull(args)
+                break
         }
 
         return success
@@ -131,4 +131,4 @@ class Proxy {
     }
 }
 
-module.exports = Proxy
+export default Proxy

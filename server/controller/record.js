@@ -2,13 +2,13 @@
  * git钩子记录
  * @author Philip
  */
-const releaseRecordDao = require('../dao/release-record')
+import releaseRecordDao from '../dao/release-record'
 
 /**
  * 记录查询
  * @Controller
  */
-module.exports.query = async (req, res) => {
+export const uery = async (req, res) => {
     let params = req.query || {}
     let { pageIndex, pageSize } = params
     let filters = {}
@@ -34,7 +34,7 @@ module.exports.query = async (req, res) => {
  * 记录删除
  * @Controller
  */
-module.exports.remove = (req, res) => {
+export const remove = (req, res) => {
     let params = req.params || {}
     let condition = {}
     

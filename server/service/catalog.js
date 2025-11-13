@@ -2,18 +2,17 @@
  * 目录变更
  * @author Philip
  */
-const path = require('path')
-const shell = require('shelljs')
-const _path = require('../config/path')
+import path from 'path';
+import shell from 'shelljs';
+import _path from '../config/path.js';
 
 /**
  * 跳转至项目目录
  * @param {array} 参数数组
  * @return none
  */
-module.exports.to = async (args) => {
-    shell.cd(`/root/${args[0]}`)
-
+export const to = async (args) => {
+    shell.cd(`/root/${args[0]}`);
     return true
 }
 
@@ -21,8 +20,7 @@ module.exports.to = async (args) => {
  * 回到部署服务目录
  * @return none
  */
-module.exports.back = async () => {
-    shell.cd(`${_path.deploydir_path}`)
-
+export const back = async () => {
+    shell.cd(`${_path.deploydir_path}`);
     return true
 }

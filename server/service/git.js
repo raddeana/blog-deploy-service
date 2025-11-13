@@ -2,13 +2,13 @@
  * git 命令
  * @author Philip
  */
-const { exec, echo, exit } = require('./shell')
+import { exec, echo, exit } from './shell.js';
 
 /**
  * 拉取
  * @return none
  */
-module.exports.pull = async (args) => {
+export const pull = async (args) => {
     let code = await exec('git pull')
 
     if (code !== 0) {
@@ -25,7 +25,7 @@ module.exports.pull = async (args) => {
  * node 推送
  * @return none
  */
-module.exports.push = async () => {
+export const push = async () => {
     await exec('git add -A && git commit -m\'auto:publish\' && git push')
     return true
 }

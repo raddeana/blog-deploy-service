@@ -2,13 +2,13 @@
  * 统计控制器
  * @author Philip
  */
-const releaseRecordDao = require('../dao/release-record')
+import  releaseRecordDao from '../dao/release-record'
 
 /**
  * 提交分类统计
  * @Controller
  */
-module.exports.releases = async (req, res) => {
+export const releases = async (req, res) => {
     let params = req.query || {}
     let { pageIndex, pageSize } = params
     let filters = {}

@@ -2,13 +2,13 @@
  * 项目
  * @author Philip
  */
-const projectDao = require('../dao/project') 
+import projectDao from '../dao/project';
 
 /**
  * 项目查询
  * @Controller
  */
-module.exports.query = async (req, res) => {
+export const query = async (req, res) => {
     let params = req.query || {}
     let filters = {}
 
@@ -35,7 +35,7 @@ module.exports.query = async (req, res) => {
  * 创建新项目
  * @Controller
  */
-module.exports.create = async (req, res) => {
+export const create = async (req, res) => {
     let result = await projectDao.create(req.body)
     
     if (result.success) {

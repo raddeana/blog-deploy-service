@@ -3,9 +3,9 @@
  * @author Philip
  */
 
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
-class ReleaseRecord {
+export default class ReleaseRecord {
     async set (data, results) {
         this.data = Object.assign(data, {
             results,
@@ -28,5 +28,3 @@ class ReleaseRecord {
         return this.data
     }
 }
-
-module.exports = ReleaseRecord

@@ -2,7 +2,7 @@
  * 错误信息
  * @author Philip
  */
-module.exports = {
+export default {
     BUILDERROR: 'code build failed',
     TOPROJECTERROR: 'to project folder failed',
     BACKDEPLOYERROR: 'back deploy folder failed',

@@ -2,10 +2,12 @@
  * mongo db
  * @author Philip
  */
-const config = require('../config/mongo')
-const Server = require('mongodb').Server
-const DataSource = require('mongodb').Db
+import config from '../config/mongo.js';
+import mongoose from 'mongoose';
 
-module.exports = new DataSource(config.databaseName, new Server(config.host, config.port, {
-    poolSize: 5
-}))
+/**
+ * 连接mongodb
+ */
+export default async function connectMongoDB() {
+    await mongoose.connect(`mongodb://${config.username}:${config.password}@${config.host}:${config.port}/?authSource=${config.databaseName}`);
+}

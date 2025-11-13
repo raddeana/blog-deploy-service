@@ -2,13 +2,13 @@
  * 部署构建
  * @author Philip
  */
-const { exec, echo, exit } = require('./shell')
+import { exec, echo, exit } from './shell.js';
 
 /**
- * 构建
+ *   构建
  * @return none
  */
-module.exports.build = async (args) => {
+export const build = async (args) => {
     let code = await exec('npm run build')
     
     if (code !== 0) {

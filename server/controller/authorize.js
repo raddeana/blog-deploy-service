@@ -2,13 +2,13 @@
  * 登录
  * @author Philip
  */
-const userDao = require('../dao/user')
+import userDao from '../dao/user'
 
 /**
  * 登录
  * @Controller
  */
-module.exports.login = async (req, res) => {
+export const login = async (req, res) => {
     let { username, password } = req.body
     let { message, user, code } = await userDao.login(username, password)
 
@@ -35,7 +35,7 @@ module.exports.login = async (req, res) => {
  * 登出
  * @Controller
  */
-module.exports.logout = async (req, res) => {
+export const logout = async (req, res) => {
     req.session.regenerate()
     req.session.user = null
     
@@ -46,7 +46,7 @@ module.exports.logout = async (req, res) => {
  * 修改密码
  * @Controller
  */
-module.exports.modifyPassword = async (req, res) => {
+export const modifyPassword = async (req, res) => {
     let user = req.body
     let result = await userDao.login(username, password)
     let { code, message } = result

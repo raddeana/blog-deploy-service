@@ -2,9 +2,9 @@
  * Http 状态码
  * @author Philip
  */
-module.exports = {
+export default {
     200: '请求成功',
     400: '请求参数错误',
     403: '未授权',
     500: '服务器遇到错误，无法完成请求'
-}
+};

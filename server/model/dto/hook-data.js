@@ -3,7 +3,7 @@
  * @author Philip
  */
 
-class HookData {
+export default class HookData {
     /**
      * 构造函数
      * @Contrutor
@@ -49,5 +49,3 @@ class HookData {
         this.data[key] = value
     }
 }
-
-module.exports = HookData

@@ -2,11 +2,11 @@
  * 已认证路由
  * @author Philip
  */
-module.exports = [
-    '/login',
-    '/',
+export const whiteUrls = [
     '',
+    '/',
+    '/login',
     '/logout',
     '/api/login',
     '/api/git/release'
-]
+];

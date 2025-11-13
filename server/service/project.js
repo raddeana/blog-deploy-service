@@ -2,15 +2,15 @@
  * 项目重启，替换静态资源版本
  * @author Philip
  */
-const { read, write } = require('../utils')
-const { exec, echo, exit } = require('./shell')
+import { read, write } from '../utils.js';
+import { exec, echo, exit } from './shell.js';
 
 /**
  * 启动项目
  * @param {string} 项目名称
  * @return none
  */
-module.exports.start = async (args) => {
+export const start = async (args) => {
     let code = await exec(`pm2 start --name="${args[0]}" npm -- start`)
 
     if (code !== 0) {
@@ -29,7 +29,7 @@ module.exports.start = async (args) => {
  * @param {array} 函数参数
  * @return none
  */
-module.exports.restart = async (args) => {
+export const restart = async (args) => {
     let code = await exec(`pm2 restart ${args[0]}`)
 
     if (code !== 0) {
@@ -48,7 +48,7 @@ module.exports.restart = async (args) => {
  * @param {array} 函数参数
  * @return {boolean} true
  */
-module.exports.replaceVersion = async (args) => {
+export const replaceVersion = async (args) => {
     try {
         let file = await read('package.json', 'utf8')
         let json = JSON.parse(file)

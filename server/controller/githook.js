@@ -2,22 +2,22 @@
  * git hook 发出的请求
  * @author Philip
  */
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 // 配置
-const _path = require('../config/path')
+import _path from '../config/path'
 
 // 服务
-const Proxy = require('../service/proxy')
-const aliOss = require('../service/ali-oss')
+import Proxy from '../service/proxy'
+import aliOss from '../service/ali-oss'
 
 // dao
-const releaseRecordDao = require('../dao/release-record')
+import releaseRecordDao from '../dao/release-record'
 
 // dto
-const ReleaseRecordDto = require('../dto/release-record')
-const HookData = require('../dto/hook-data')
+import ReleaseRecordDto from '../dto/release-record'
+import HookData from '../dto/hook-data'
 
 /**
  * 遍历文件夹
@@ -44,7 +44,7 @@ let ergodicFolder = async (folderPath, handler) => {
  * git release
  * @Controller
  */
-module.exports.release = async (req, res) => {
+export const release = async (req, res) => {
     let proxy = new Proxy()
     let data = new HookData(req.body)
     let { repository, tag_name, action } = data.get()
@@ -114,7 +114,7 @@ module.exports.release = async (req, res) => {
  * @param {object} 相应
  * @Controller
  */
-module.exports.deployRelease = async (req, res) => {
+export const deployRelease = async (req, res) => {
     let proxy = new Proxy()
     let data = new HookData(req.body)
     let { repository, tag_name, action } = data.get()

@@ -2,11 +2,11 @@
  * 执行脚本
  * @author Philip
  */
-const shell = require('shelljs')
+import shell from 'shelljs';
 
-module.exports = {
+export default {
     exec: (_shell) => {
-        return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve) {
             try {
                 shell.exec(_shell, {
                     silent: true
