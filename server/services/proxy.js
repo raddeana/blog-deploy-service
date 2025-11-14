@@ -4,13 +4,13 @@
  */
  
 // 行为错误信息
-import errorMessages from '../constant/deploy-errors.js';
+import errorMessages from '../constants/deploy-errors.js';
 
 // 部署服务
-import npm from'./npm.js';
-import git from './git.js';
-import catalog from './catalog.js';
-import project from './project.js';
+import { build, } from'./npm.js';
+import { push, pull, } from './git.js';
+import { to, back, } from './catalog.js';
+import { start, restart, replaceVersion, } from './project.js';
 
 class Proxy {
     /**
@@ -34,28 +34,28 @@ class Proxy {
 
         switch (action) {
             case 'npm.build':
-                success = await npm.build(args)
+                success = await build(args)
                 break
             case 'catalog.to':
-                success = await catalog.to(args)
+                success = await to(args)
                 break
             case 'catalog.back':
-                success = await catalog.back(args)
+                success = await back(args)
                 break
             case 'project.start':
-                success = await project.start(args)
+                success = await start(args)
                 break
             case 'project.restart':
-                success = await project.restart(args)
+                success = await restart(args)
                 break
             case 'project.replaceVersion':
-                success = await project.replaceVersion(args)
+                success = await replaceVersion(args)
                 break
             case 'git.push':
-                success = await git.push(args)
+                success = await push(args)
                 break
             case 'git.pull':
-                success = await git.pull(args)
+                success = await pull(args)
                 break
         }
 

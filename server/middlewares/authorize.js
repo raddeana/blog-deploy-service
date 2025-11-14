@@ -2,7 +2,7 @@
  * 权限验证
  * @author Philip
  */
-import { whiteUrls } from '../constant/whilelist.js'
+import { whiteUrls } from '../constants/whilelist.js'
 
 export default (req, res, next) => {
     let reg = /\/api\//;

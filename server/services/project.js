@@ -2,7 +2,7 @@
  * 项目重启，替换静态资源版本
  * @author Philip
  */
-import { read, write } from '../utils.js';
+import { read, write } from '../utils/index.js';
 import { exec, echo, exit } from './shell.js';
 
 /**

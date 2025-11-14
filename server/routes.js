@@ -4,11 +4,11 @@
  */
 const csrf = require('csurf');
 
-import recordController from './controller/record.js';
-import projectController from './controller/project.js';
-import githookController from './controller/githook.js';
-import authorizeController from './controller/authorize.js';
-import statisticsController from './controller/statistics.js';
+import * as recordController from './controllers/record.js';
+import * as projectController from './controllers/project.js';
+import * as githookController from './controllers/githook.js';
+import * as authorizeController from './controllers/authorize.js';
+import * as statisticsController from './controllers/statistics.js';
 
 // csrf
 const csrfProtection = csrf({ cookie: true });

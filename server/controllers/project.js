@@ -2,7 +2,7 @@
  * 项目
  * @author Philip
  */
-import projectDao from '../dao/project';
+import projectDao from '../models/dao/project.js';
 
 /**
  * 项目查询

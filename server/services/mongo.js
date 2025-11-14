@@ -2,7 +2,7 @@
  * mongo db
  * @author Philip
  */
-import config from '../config/mongo.js';
+import config from '../configs/mongo.js';
 import mongoose from 'mongoose';
 
 /**

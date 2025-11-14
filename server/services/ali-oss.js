@@ -4,7 +4,7 @@
  */
 
 import AliOss from 'ali-oss';
-import { read, write } from '../utils.js';
+import { read, } from '../utils/index.js';
 
 /**
  * 获取阿里云 Oss 实例

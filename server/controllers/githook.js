@@ -6,18 +6,18 @@ import fs from 'fs'
 import path from 'path'
 
 // 配置
-import _path from '../config/path'
+import _path from '../configs/path.js'
 
 // 服务
-import Proxy from '../service/proxy'
-import aliOss from '../service/ali-oss'
+import Proxy from '../services/proxy.js'
+import { upload, } from '../services/ali-oss.js'
 
 // dao
-import releaseRecordDao from '../dao/release-record'
+import releaseRecordDao from '../models/dao/release-record.js'
 
 // dto
-import ReleaseRecordDto from '../dto/release-record'
-import HookData from '../dto/hook-data'
+import ReleaseRecordDto from '../models/dto/release-record.js'
+import HookData from '../models/dto/hook-data.js'
 
 /**
  * 遍历文件夹
@@ -84,7 +84,7 @@ export const release = async (req, res) => {
                         file = `/css/${file}`
                     }
 
-                    aliOss.upload(file, filePath)
+                    upload(file, filePath)
                 }
             })
         }

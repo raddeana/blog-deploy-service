@@ -2,7 +2,7 @@
  * 用户
  * @author Philip
  */
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 // user
@@ -91,4 +91,4 @@ schema.statics = {
     }
 }
 
-module.exports = mongoose.model('user', schema)
+export default mongoose.model('user', schema)

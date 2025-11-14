@@ -2,7 +2,7 @@
  * 登录
  * @author Philip
  */
-import userDao from '../dao/user'
+import userDao from '../models/dao/user.js'
 
 /**
  * 登录

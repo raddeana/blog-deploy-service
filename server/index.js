@@ -9,9 +9,9 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import ejs from 'ejs';
 import bodyParser from 'body-parser';
-import connectMongoDB from './service/mongo.js';
-import corsMiddleware from './middleware/cors.js';
-import authorizeMiddleware from './middleware/authorize.js';
+import connectMongoDB from './services/mongo.js';
+import corsMiddleware from './middlewares/cors.js';
+import authorizeMiddleware from './middlewares/authorize.js';
 import routes from './routes.js';
 
 const app = express();

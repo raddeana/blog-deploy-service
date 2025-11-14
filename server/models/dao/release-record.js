@@ -2,8 +2,8 @@
  * release 记录列表
  * @author Philip
  */
-const mongoose = require('mongoose')
-const projectSchema = require('./project')
+import mongoose from 'mongoose'
+import projectSchema from './project.js'
 const Schema = mongoose.Schema
 
 // 发布记录
@@ -100,4 +100,4 @@ schema.statics = {
 let releaseRecordDao = mongoose.model('releaseRecord', schema)
 mongoose.model('project', projectSchema)
 
-module.exports = releaseRecordDao
+export default releaseRecordDao

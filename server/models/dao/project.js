@@ -3,7 +3,7 @@
  * 项目配置
  * @author Philip
  */
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 // result schema
@@ -123,4 +123,4 @@ schema.statics = {
     }
 }
  
-module.exports = schema
+export default schema

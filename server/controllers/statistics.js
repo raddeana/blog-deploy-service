@@ -2,7 +2,7 @@
  * 统计控制器
  * @author Philip
  */
-import  releaseRecordDao from '../dao/release-record'
+import  releaseRecordDao from '../models/dao/release-record.js'
 
 /**
  * 提交分类统计

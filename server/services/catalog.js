@@ -2,9 +2,8 @@
  * 目录变更
  * @author Philip
  */
-import path from 'path';
 import shell from 'shelljs';
-import _path from '../config/path.js';
+import _path from '../configs/path.js';
 
 /**
  * 跳转至项目目录
