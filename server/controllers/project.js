@@ -51,7 +51,7 @@ export const create = async (req, res) => {
  * 新项目更新
  * @Controller
  */
-module.exports.update = async (req, res) => {
+export const update = async (req, res) => {
     let result = await projectDao.update(req.body)
   
     if (result.success) {

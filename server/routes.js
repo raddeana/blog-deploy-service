@@ -2,7 +2,7 @@
  * 路由配置
  * @author Philip
  */
-const csrf = require('csurf');
+import csrf from 'csurf';
 
 import * as recordController from './controllers/record.js';
 import * as projectController from './controllers/project.js';

@@ -8,10 +8,6 @@
   },
   "author": "philip",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/raddeana/blog-deploy-services/issues",
-    "email": "wowcxy2008@126.com"
-  },
   "type": "module",
   "scripts": {
     "start": "cross-env NODE_ENV=prod node server/index.js",

@@ -3,9 +3,11 @@
  * @author Philip
  */
 import path from 'path';
+import { fileURLToPath } from 'url';
 import express from 'express';
 import session from 'express-session';
 import mongoose from 'mongoose';
+import MongoStore from 'connect-mongo';
 import cookieParser from 'cookie-parser';
 import ejs from 'ejs';
 import bodyParser from 'body-parser';
@@ -13,6 +15,10 @@ import connectMongoDB from './services/mongo.js';
 import corsMiddleware from './middlewares/cors.js';
 import authorizeMiddleware from './middlewares/authorize.js';
 import routes from './routes.js';
+
+const secret = 'PhilipChen';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const baseDir = __dirname.replace(/(\\|\/)server/, '');
@@ -33,12 +39,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(midStatic)
 
 await connectMongoDB();
-const MongoStore = require('connect-mongo')(session);
 
 app.use(cookieParser(secret));
 app.use(session({
     secret,
-    store: new MongoStore({
+    store: MongoStore.create({
         mongooseConnection: mongoose.connection,
     }),
     saveUninitialized: false,
