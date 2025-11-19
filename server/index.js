@@ -6,7 +6,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
 import session from 'express-session';
-import mongoose from 'mongoose';
 import MongoStore from 'connect-mongo';
 import cookieParser from 'cookie-parser';
 import ejs from 'ejs';
@@ -44,8 +43,9 @@ app.use(cookieParser(secret));
 app.use(session({
     secret,
     store: MongoStore.create({
-        mongooseConnection: mongoose.connection,
+        mongoUrl: 'mongodb://regular:kknd0321@127.0.0.1/deploy' 
     }),
+    resave: false,
     saveUninitialized: false,
     httpOnly: true,
     cookie: {
